@@ -2,7 +2,7 @@
 
 # ReLaXed
 
-ReLaXed is a tool which creates PDF documents interactively using HTML or [Pug](https://pugjs.org/api/getting-started.html) (a shorthand for HTML). It allows complex layouts to be defined with CSS and JavaScript, while writing the content in a friendly, minimal syntax close to Markdown or LaTeX.
+ReLaXed creates PDF documents interactively using HTML or [Pug](https://pugjs.org/api/getting-started.html) (a shorthand for HTML). It allows complex layouts to be defined with CSS and JavaScript, while writing the content in a friendly, minimal syntax close to Markdown or LaTeX.
 
 Here it is in action in the Atom editor:
 
@@ -86,17 +86,13 @@ ReLaXed has support for Markdown, LaTeX-style mathematical equations (via [MathJ
 
 ## Installing ReLaXed
 
-At the moment, the best solution is to install ReLaXed in an empty directory as follows:
+Install ReLaXed via [NPM](https://www.npmjs.com/):
 
 ```
-git clone https://github.com/RelaxedJS/ReLaXed.git .
-npm install
-sudo npm link --unsafe-perm=true
+npm i -g relaxedjs
 ```
 
-This provides your system with the ``relaxed`` command.
-
-Hopefully, in the future, installation will be as simple as ``npm i -g relaxedjs``, but there are known [issues](https://github.com/GoogleChrome/puppeteer/issues/375#issuecomment-363466257) with Puppeteer. In case it doesn't work for you, have a look at the [troubleshooting](https://github.com/RelaxedJS/ReLaXed/wiki/Troubleshooting) page. Any help towards a simpler installation procedure is welcome.
+This will provide your system with the ``relaxed`` command. If the installation fails, refer to the [troubleshooting page](https://github.com/RelaxedJS/ReLaXed/wiki/Troubleshooting).
 
 
 ## Getting started
@@ -149,4 +145,8 @@ ReLaXed consists of a few lines of code binding together other software. It uses
 
 ## Contribute!
 
-ReLaXed is an open-source framework originally written by [Zulko](https://github.com/Zulko) and released on [Github](https://github.com/Zulko/relaxed) under the ISC licence. Everyone is welcome to contribute!
+ReLaXed is an open-source framework originally written by [Zulko](https://github.com/Zulko) and released on [Github](https://github.com/RelaxedJS/ReLaXed) under the ISC licence. Everyone is welcome to contribute!
+
+## License
+
+[ISC](https://github.com/RelaxedJS/ReLaXed/blob/master/LICENCE.txt)

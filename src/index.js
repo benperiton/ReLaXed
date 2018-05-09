@@ -14,6 +14,7 @@ program
   .version('0.0.1')
   .usage('<input> [output] [options]')
   .arguments('<input> [output] [options]')
+  .option('--no-sandbox', 'disable puppeteer sandboxing')
   .option('-w, --watch <locations>', 'Watch other locations', [])
   .option('-t, --temp [location]', 'Directory for temp file')
   .action(function (inp, out) {
@@ -58,11 +59,14 @@ if (program.watch) {
   watchLocations = watchLocations.concat(program.watch)
 }
 
+const puppeteerConfig = {
+  headless: true,
+  args: program.sandbox ? ['--no-sandbox'] : []
+}
+
 async function main () {
   console.log('Watching ' + input + ' and its directory tree.')
-  const browser = await puppeteer.launch({
-    headless: true
-  })
+  const browser = await puppeteer.launch(puppeteerConfig);
   const page = await browser.newPage()
   page.on('pageerror', function (err) {
     console.log('Page error: ' + err.toString())
